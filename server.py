@@ -330,11 +330,16 @@ def deploy_to_netlify(slug, html_content):
 
         # Get current deploy
         r = requests.get(
-            f"https://api.netlify.com/api/v1/sites/{NETLIFY_SITE_ID}",
-            headers={"Authorization": f"Bearer {NETLIFY_TOKEN}"},
-            timeout=15
-        )
-        site = r.json()
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates",
+                params={"offset": offset, "timeout": 5},
+                timeout=10
+            )
+            resp = r.json()
+            if resp.get("result"):
+                print(f"[POLL] Got {len(resp['result'])} updates", flush=True)
+            if not resp.get("ok"):
+                print(f"[POLL] API error: {resp}", flush=True)
+            updates = resp.get("result", [])
         
         # Create new file deploy
         r = requests.post(
