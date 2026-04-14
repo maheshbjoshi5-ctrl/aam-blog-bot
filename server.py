@@ -500,9 +500,11 @@ def handle_message(chat_id, text):
 
 def poll_telegram():
     """Long polling for Telegram updates"""
+    print(f"[POLL] Token loaded: {TELEGRAM_TOKEN[:15]}...")
     offset = 0
     while True:
         try:
+            print(f"[POLL] Fetching updates...")
             r = requests.get(
                 f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates",
                 params={"offset": offset, "timeout": 30},
