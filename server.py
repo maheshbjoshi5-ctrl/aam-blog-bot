@@ -70,12 +70,27 @@ def bhtml(d, cat):
 def dep(slug, html):
     try:
         fb=html.encode("utf-8"); fh=hashlib.sha1(fb).hexdigest(); fp="blog/"+slug+".html"
-        r=requests.post("https://api.netlify.com/api/v1/sites/"+NS+"/deploys", headers={"Authorization":"Bearer "+NL,"Content-Type":"application/json"}, json={"files":{"/"+fp:fh}}, timeout=15)
+        # Step 1: Get current production deploy to preserve ALL existing files
+        r=requests.get("https://api.netlify.com/api/v1/sites/"+NS, headers={"Authorization":"Bearer "+NL}, timeout=15)
+        site=r.json()
+        current_deploy_id=site.get("published_deploy",{}).get("id","")
+        if not current_deploy_id:
+            return False,"No current deploy found"
+        # Step 2: Get all file hashes from current deploy
+        r=requests.get("https://api.netlify.com/api/v1/deploys/"+current_deploy_id+"/files", headers={"Authorization":"Bearer "+NL}, timeout=15)
+        existing_files={}
+        for f in r.json():
+            existing_files[f["path"]]=f["sha"]
+        # Step 3: Add new file to the list
+        existing_files["/"+fp]=fh
+        # Step 4: Create deploy with ALL files (existing + new)
+        r=requests.post("https://api.netlify.com/api/v1/sites/"+NS+"/deploys", headers={"Authorization":"Bearer "+NL,"Content-Type":"application/json"}, json={"files":existing_files}, timeout=30)
         did=r.json().get("id","")
-        if not did: return False,"No deploy ID"
+        if not did: return False,"Deploy failed"
+        # Step 5: Upload ONLY the new file (Netlify already has the others)
         r=requests.put("https://api.netlify.com/api/v1/deploys/"+did+"/files/"+fp, headers={"Authorization":"Bearer "+NL,"Content-Type":"application/octet-stream"}, data=fb, timeout=30)
         if r.status_code in [200,201]: return True,"https://www.askacharyamahesh.com/blog/"+slug+".html"
-        return False,"Status "+str(r.status_code)
+        return False,"Upload status "+str(r.status_code)
     except Exception as e:
         return False,str(e)
 
