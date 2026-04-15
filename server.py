@@ -26,6 +26,14 @@ def health():
     return jsonify({"status":"running","time":datetime.now(IST).isoformat()})
 
 
+@app.route("/api/articles")
+def get_articles():
+    try:
+        with open("published.json","r") as f: arts=json.load(f)
+    except: arts=[]
+    return jsonify(arts)
+
+
 def tg(method, data=None):
     try:
         return requests.post("https://api.telegram.org/bot"+TG+"/"+method, json=data, timeout=30).json()
@@ -153,6 +161,12 @@ def handle(cid, text):
         ok,url=dep(slug,html)
         if ok:
             send(cid, "Published! "+url)
+            # Save to published articles list
+            try:
+                with open("published.json","r") as f: arts=json.load(f)
+            except: arts=[]
+            arts.append({"slug":slug,"title":pa["data"]["title"],"category":pa["category"],"cat_label":{"vastu":"MahaVastu","jyotish":"KP Jyotish","numerology":"Numerology","samkhya":"Samkhya Sutra","branding":"Branding","prakriti":"Prakriti","business":"Business Vastu","wisdom":"Vedic Wisdom"}.get(pa["category"],""),"desc":pa["data"]["description"],"date":datetime.now(IST).strftime("%Y-%m-%d")})
+            with open("published.json","w") as f: json.dump(arts,f)
             er=send_email(pa["data"]["title"],slug,pa["data"]["description"])
             send(cid, "Email: "+er)
             tg("sendMessage",{"chat_id":CH,"text":"New Article\n\n"+pa["data"]["title"]+"\n\n"+pa["data"]["description"]+"\n\nRead: "+url+"\n\naskacharyamahesh.com"})
@@ -188,8 +202,7 @@ def handle(cid, text):
 # ═══ WEBHOOK MODE (no polling = no conflict) ═══
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    data = flask_request.get_json(force=True, silent=True) or {}
-    print("WEBHOOK DATA: "+json.dumps(data)[:500], flush=True)
+    data = flask_request.get_json() or {}
     msg = data.get("message", {})
     cid = msg.get("chat", {}).get("id")
     txt = msg.get("text", "")
