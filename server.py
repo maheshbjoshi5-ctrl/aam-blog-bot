@@ -188,7 +188,8 @@ def handle(cid, text):
 # ═══ WEBHOOK MODE (no polling = no conflict) ═══
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    data = flask_request.get_json() or {}
+    data = flask_request.get_json(force=True, silent=True) or {}
+    print("WEBHOOK DATA: "+json.dumps(data)[:500], flush=True)
     msg = data.get("message", {})
     cid = msg.get("chat", {}).get("id")
     txt = msg.get("text", "")
