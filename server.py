@@ -6,7 +6,6 @@ import requests
 
 app = Flask(__name__)
 CORS(app)
-
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 CLAUDE_API_KEY = os.environ.get("CLAUDE_API_KEY", "")
 NETLIFY_TOKEN = os.environ.get("NETLIFY_TOKEN", "")
@@ -289,9 +288,16 @@ def daily_cron():
         time.sleep(30)
 
 
-if __name__ == "__main__":
+import sys
+
+def start_bot():
+    time.sleep(5)
     threading.Thread(target=poll_telegram, daemon=True).start()
     print("[BOT] Started", flush=True)
     threading.Thread(target=daily_cron, daemon=True).start()
     print("[CRON] Started", flush=True)
+
+start_bot()
+
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
