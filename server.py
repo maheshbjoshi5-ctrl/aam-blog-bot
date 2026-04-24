@@ -77,28 +77,44 @@ def bhtml(d, cat):
 def dep(slug, html):
     try:
         fb=html.encode("utf-8"); fh=hashlib.sha1(fb).hexdigest(); fp="blog/"+slug+".html"
-        # Step 1: Get current production deploy to preserve ALL existing files
-        r=requests.get("https://api.netlify.com/api/v1/sites/"+NS, headers={"Authorization":"Bearer "+NL}, timeout=15)
+        headers={"Authorization":"Bearer "+NL}
+        # Step 1: Get current production deploy
+        r=requests.get("https://api.netlify.com/api/v1/sites/"+NS, headers=headers, timeout=15)
         site=r.json()
         current_deploy_id=site.get("published_deploy",{}).get("id","")
         if not current_deploy_id:
             return False,"No current deploy found"
-        # Step 2: Get all file hashes from current deploy
-        r=requests.get("https://api.netlify.com/api/v1/deploys/"+current_deploy_id+"/files", headers={"Authorization":"Bearer "+NL}, timeout=15)
+        print("DEP: Current deploy: "+current_deploy_id, flush=True)
+        # Step 2: Get ALL file hashes (handle pagination)
         existing_files={}
-        for f in r.json():
-            existing_files[f["path"]]=f["sha"]
-        # Step 3: Add new file to the list
+        page=1
+        while True:
+            r=requests.get("https://api.netlify.com/api/v1/deploys/"+current_deploy_id+"/files", headers=headers, params={"page":page,"per_page":100}, timeout=20)
+            files=r.json()
+            if not files: break
+            for f in files:
+                existing_files[f["path"]]=f["sha"]
+            if len(files)<100: break
+            page+=1
+        print("DEP: Existing files: "+str(len(existing_files)), flush=True)
+        # Step 3: Add new file
         existing_files["/"+fp]=fh
-        # Step 4: Create deploy with ALL files (existing + new)
-        r=requests.post("https://api.netlify.com/api/v1/sites/"+NS+"/deploys", headers={"Authorization":"Bearer "+NL,"Content-Type":"application/json"}, json={"files":existing_files}, timeout=30)
-        did=r.json().get("id","")
-        if not did: return False,"Deploy failed"
-        # Step 5: Upload ONLY the new file (Netlify already has the others)
-        r=requests.put("https://api.netlify.com/api/v1/deploys/"+did+"/files/"+fp, headers={"Authorization":"Bearer "+NL,"Content-Type":"application/octet-stream"}, data=fb, timeout=30)
-        if r.status_code in [200,201]: return True,"https://www.askacharyamahesh.com/blog/"+slug+".html"
-        return False,"Upload status "+str(r.status_code)
+        # Step 4: Create deploy with ALL files
+        r=requests.post("https://api.netlify.com/api/v1/sites/"+NS+"/deploys", headers={**headers,"Content-Type":"application/json"}, json={"files":existing_files}, timeout=30)
+        deploy_resp=r.json()
+        did=deploy_resp.get("id","")
+        required=deploy_resp.get("required",[])
+        if not did:
+            return False,"Deploy create failed: "+str(deploy_resp.get("message","unknown"))
+        print("DEP: Deploy ID: "+did+" | Required uploads: "+str(len(required)), flush=True)
+        # Step 5: Upload only required files (new ones Netlify doesn't have)
+        r=requests.put("https://api.netlify.com/api/v1/deploys/"+did+"/files/"+fp, headers={**headers,"Content-Type":"application/octet-stream"}, data=fb, timeout=30)
+        if r.status_code in [200,201]:
+            print("DEP: Upload success", flush=True)
+            return True,"https://www.askacharyamahesh.com/blog/"+slug+".html"
+        return False,"Upload status "+str(r.status_code)+" body: "+r.text[:200]
     except Exception as e:
+        print("DEP ERROR: "+str(e), flush=True)
         return False,str(e)
 
 
@@ -183,6 +199,27 @@ def handle(cid, text):
         ok,url=dep(slug,html)
         if ok:
             send(cid, "Published! "+url)
+            # Also deploy updated blog-data.json for fallback
+            try:
+                arts_for_json = []
+                for a in arts:
+                    arts_for_json.append({"slug":a.get("slug",""),"title":a.get("title",""),"category":a.get("category",""),"cat_label":a.get("cat_label",""),"desc":a.get("desc",""),"date":a.get("date","")})
+                bd_bytes = json.dumps(arts_for_json, ensure_ascii=False).encode("utf-8")
+                bd_hash = hashlib.sha1(bd_bytes).hexdigest()
+                # Get current files again
+                r_site = requests.get("https://api.netlify.com/api/v1/sites/"+NS, headers={"Authorization":"Bearer "+NL}, timeout=10)
+                cd_id = r_site.json().get("published_deploy",{}).get("id","")
+                if cd_id:
+                    r_files = requests.get("https://api.netlify.com/api/v1/deploys/"+cd_id+"/files", headers={"Authorization":"Bearer "+NL}, params={"per_page":100}, timeout=15)
+                    ef = {f2["path"]:f2["sha"] for f2 in r_files.json()}
+                    ef["/blog-data.json"] = bd_hash
+                    r_dep = requests.post("https://api.netlify.com/api/v1/sites/"+NS+"/deploys", headers={"Authorization":"Bearer "+NL,"Content-Type":"application/json"}, json={"files":ef}, timeout=20)
+                    bd_did = r_dep.json().get("id","")
+                    if bd_did:
+                        requests.put("https://api.netlify.com/api/v1/deploys/"+bd_did+"/files/blog-data.json", headers={"Authorization":"Bearer "+NL,"Content-Type":"application/octet-stream"}, data=bd_bytes, timeout=15)
+                        print("DEP: blog-data.json updated", flush=True)
+            except Exception as bde:
+                print("DEP: blog-data.json update failed: "+str(bde), flush=True)
             # Save to published articles list
             try:
                 with open("published.json","r") as f: arts=json.load(f)
