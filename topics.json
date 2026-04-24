@@ -1,82 +1,542 @@
 [
-{"id":0,"category":"vastu","title":"Kitchen in South-East Zone Benefits","used":false},
-{"id":1,"category":"jyotish","title":"Moon Sign Importance in KP System","used":false},
-{"id":2,"category":"numerology","title":"Destiny Number Calculation Guide","used":false},
-{"id":3,"category":"samkhya","title":"Mahat Tattva and Decision Making","used":false},
-{"id":4,"category":"branding","title":"Restaurant Name Numerology Guide","used":false},
-{"id":5,"category":"prakriti","title":"Prakriti Based Morning Routine","used":false},
-{"id":6,"category":"business","title":"Office Reception Zone Vastu Guide","used":false},
-{"id":7,"category":"wisdom","title":"Planetary Hours Daily Guide","used":false},
-{"id":8,"category":"vastu","title":"Bedroom in South Zone Effects","used":false},
-{"id":9,"category":"jyotish","title":"Rahu in 7th House Marriage Effect","used":false},
-{"id":10,"category":"numerology","title":"Life Path Number Complete Meaning","used":false},
-{"id":11,"category":"samkhya","title":"Ahamkara Three Types Explained","used":false},
-{"id":12,"category":"branding","title":"Clinic Branding with Astro Vastu","used":false},
-{"id":13,"category":"prakriti","title":"Dosha Balancing Breakfast Ideas","used":false},
-{"id":14,"category":"business","title":"Conference Room Direction Vastu","used":false},
-{"id":15,"category":"wisdom","title":"Navagraha and Weekday Connection","used":false},
-{"id":16,"category":"vastu","title":"Living Room North Zone Energy","used":false},
-{"id":17,"category":"jyotish","title":"Ketu in 12th House Spirituality","used":false},
-{"id":18,"category":"numerology","title":"Name Number vs Birth Number Truth","used":false},
-{"id":19,"category":"samkhya","title":"Manas Mind Management Vedic Way","used":false},
-{"id":20,"category":"branding","title":"Startup Logo Colour Planet Guide","used":false},
-{"id":21,"category":"prakriti","title":"Kapha Weight Management Natural","used":false},
-{"id":22,"category":"business","title":"MD Cabin Best Zone Placement","used":false},
-{"id":23,"category":"wisdom","title":"Rudraksha Selection Complete Guide","used":false},
-{"id":24,"category":"vastu","title":"Main Door Facing East Advantages","used":false},
-{"id":25,"category":"jyotish","title":"Jupiter Transit Yearly Effects","used":false},
-{"id":26,"category":"numerology","title":"Number 1 Sun Leadership Energy","used":false},
-{"id":27,"category":"samkhya","title":"Five Tanmatras Senses Explained","used":false},
-{"id":28,"category":"branding","title":"Website Colour Selection by Planet","used":false},
-{"id":29,"category":"prakriti","title":"Pitta Anger Management Vedic Tips","used":false},
-{"id":30,"category":"business","title":"Accounts Department Zone Vastu","used":false},
-{"id":31,"category":"wisdom","title":"Yantra Placement Home Guide","used":false},
-{"id":32,"category":"vastu","title":"Staircase Direction Vastu Guide","used":false},
-{"id":33,"category":"jyotish","title":"Venus Dasha Love and Money Effect","used":false},
-{"id":34,"category":"numerology","title":"Number 3 Jupiter Creative Power","used":false},
-{"id":35,"category":"samkhya","title":"Five Mahabhutas in Daily Life","used":false},
-{"id":36,"category":"branding","title":"Office Interior Colour Branding","used":false},
-{"id":37,"category":"prakriti","title":"Vata Anxiety Natural Solutions","used":false},
-{"id":38,"category":"business","title":"Warehouse Layout Vastu Principles","used":false},
-{"id":39,"category":"wisdom","title":"Brahma Muhurta Wake Up Benefits","used":false},
-{"id":40,"category":"vastu","title":"Mirror Placement Complete Vastu","used":false},
-{"id":41,"category":"jyotish","title":"Mars in 10th House Career Impact","used":false},
-{"id":42,"category":"numerology","title":"Number 5 Mercury Business Power","used":false},
-{"id":43,"category":"samkhya","title":"Prakriti Three Modes of Living","used":false},
-{"id":44,"category":"branding","title":"Retail Store Name Energy Check","used":false},
-{"id":45,"category":"prakriti","title":"Seasonal Routine Ritucharya Guide","used":false},
-{"id":46,"category":"business","title":"Manufacturing Unit Vastu Layout","used":false},
-{"id":47,"category":"wisdom","title":"Rahu Kaal Practical Daily Guide","used":false},
-{"id":48,"category":"vastu","title":"Pooja Room Best Zone Selection","used":false},
-{"id":49,"category":"jyotish","title":"Manglik Dosha Truth Explained","used":false},
-{"id":50,"category":"numerology","title":"Number 8 Saturn Discipline Energy","used":false},
-{"id":51,"category":"samkhya","title":"Sattva Food and Lifestyle Guide","used":false},
-{"id":52,"category":"branding","title":"IT Company Name Number Selection","used":false},
-{"id":53,"category":"prakriti","title":"Prakriti Based Exercise Selection","used":false},
-{"id":54,"category":"business","title":"Hospital Vastu Complete Guidelines","used":false},
-{"id":55,"category":"wisdom","title":"Griha Pravesh Complete Muhurat","used":false},
-{"id":56,"category":"vastu","title":"North Facing House Complete Guide","used":false},
-{"id":57,"category":"jyotish","title":"Sade Sati Complete Survival Guide","used":false},
-{"id":58,"category":"numerology","title":"Wedding Date Selection Numerology","used":false},
-{"id":59,"category":"samkhya","title":"Guna Analysis for Relationships","used":false},
-{"id":60,"category":"branding","title":"Food Brand Colour Energy Guide","used":false},
-{"id":61,"category":"prakriti","title":"Sleep Time Guide by Dosha Type","used":false},
-{"id":62,"category":"business","title":"School Building Vastu Planning","used":false},
-{"id":63,"category":"wisdom","title":"Diwali Lakshmi Direction Guide","used":false},
-{"id":64,"category":"vastu","title":"South Facing House Truth Guide","used":false},
-{"id":65,"category":"jyotish","title":"Mahadasha Change Life Effects","used":false},
-{"id":66,"category":"numerology","title":"House Number Lucky or Not Check","used":false},
-{"id":67,"category":"samkhya","title":"Vedic Time Management Method","used":false},
-{"id":68,"category":"branding","title":"YouTube Channel Name Number Tips","used":false},
-{"id":69,"category":"prakriti","title":"Workplace Dosha Balance Guide","used":false},
-{"id":70,"category":"business","title":"Showroom Display Direction Vastu","used":false},
-{"id":71,"category":"wisdom","title":"Navratri Nine Zone Activation","used":false},
-{"id":72,"category":"vastu","title":"Home Office Vastu Perfect Setup","used":false},
-{"id":73,"category":"jyotish","title":"Prashna Kundali Method Explained","used":false},
-{"id":74,"category":"numerology","title":"Phone Number Vibration Analysis","used":false},
-{"id":75,"category":"samkhya","title":"Element Balancing Your Home","used":false},
-{"id":76,"category":"branding","title":"Business Card Design Vastu Tips","used":false},
-{"id":77,"category":"prakriti","title":"Dosha Imbalance Warning Signs","used":false},
-{"id":78,"category":"business","title":"Jewellery Shop Zone Design Vastu","used":false},
-{"id":79,"category":"wisdom","title":"Purnima Full Moon Energy Guide","used":false}
+  {
+    "id": 0,
+    "category": "vastu",
+    "title": "Kitchen in South-East Zone Benefits",
+    "used": false
+  },
+  {
+    "id": 1,
+    "category": "jyotish",
+    "title": "Moon Sign Importance in KP System",
+    "used": false
+  },
+  {
+    "id": 2,
+    "category": "numerology",
+    "title": "Destiny Number Calculation Guide",
+    "used": false
+  },
+  {
+    "id": 3,
+    "category": "samkhya",
+    "title": "Mahat Tattva and Decision Making",
+    "used": false
+  },
+  {
+    "id": 4,
+    "category": "branding",
+    "title": "Restaurant Name Numerology Guide",
+    "used": false
+  },
+  {
+    "id": 5,
+    "category": "prakriti",
+    "title": "Prakriti Based Morning Routine",
+    "used": false
+  },
+  {
+    "id": 6,
+    "category": "business",
+    "title": "Office Reception Zone Vastu Guide",
+    "used": false
+  },
+  {
+    "id": 7,
+    "category": "wisdom",
+    "title": "Planetary Hours Daily Guide",
+    "used": false
+  },
+  {
+    "id": 8,
+    "category": "vastu",
+    "title": "Bedroom in South Zone Effects",
+    "used": false
+  },
+  {
+    "id": 9,
+    "category": "jyotish",
+    "title": "Rahu in 7th House Marriage Effect",
+    "used": false
+  },
+  {
+    "id": 10,
+    "category": "numerology",
+    "title": "Life Path Number Complete Meaning",
+    "used": false
+  },
+  {
+    "id": 11,
+    "category": "samkhya",
+    "title": "Ahamkara Three Types Explained",
+    "used": false
+  },
+  {
+    "id": 12,
+    "category": "branding",
+    "title": "Clinic Branding with Astro Vastu",
+    "used": false
+  },
+  {
+    "id": 13,
+    "category": "prakriti",
+    "title": "Dosha Balancing Breakfast Ideas",
+    "used": false
+  },
+  {
+    "id": 14,
+    "category": "business",
+    "title": "Conference Room Direction Vastu",
+    "used": false
+  },
+  {
+    "id": 15,
+    "category": "wisdom",
+    "title": "Navagraha and Weekday Connection",
+    "used": false
+  },
+  {
+    "id": 16,
+    "category": "vastu",
+    "title": "Living Room North Zone Energy",
+    "used": false
+  },
+  {
+    "id": 17,
+    "category": "jyotish",
+    "title": "Ketu in 12th House Spirituality",
+    "used": false
+  },
+  {
+    "id": 18,
+    "category": "numerology",
+    "title": "Name Number vs Birth Number Truth",
+    "used": false
+  },
+  {
+    "id": 19,
+    "category": "samkhya",
+    "title": "Manas Mind Management Vedic Way",
+    "used": false
+  },
+  {
+    "id": 20,
+    "category": "branding",
+    "title": "Startup Logo Colour Planet Guide",
+    "used": false
+  },
+  {
+    "id": 21,
+    "category": "prakriti",
+    "title": "Kapha Weight Management Natural",
+    "used": false
+  },
+  {
+    "id": 22,
+    "category": "business",
+    "title": "MD Cabin Best Zone Placement",
+    "used": false
+  },
+  {
+    "id": 23,
+    "category": "wisdom",
+    "title": "Rudraksha Selection Complete Guide",
+    "used": false
+  },
+  {
+    "id": 24,
+    "category": "vastu",
+    "title": "Main Door Facing East Advantages",
+    "used": false
+  },
+  {
+    "id": 25,
+    "category": "jyotish",
+    "title": "Jupiter Transit Yearly Effects",
+    "used": false
+  },
+  {
+    "id": 26,
+    "category": "numerology",
+    "title": "Number 1 Sun Leadership Energy",
+    "used": false
+  },
+  {
+    "id": 27,
+    "category": "samkhya",
+    "title": "Five Tanmatras Senses Explained",
+    "used": false
+  },
+  {
+    "id": 28,
+    "category": "branding",
+    "title": "Website Colour Selection by Planet",
+    "used": false
+  },
+  {
+    "id": 29,
+    "category": "prakriti",
+    "title": "Pitta Anger Management Vedic Tips",
+    "used": false
+  },
+  {
+    "id": 30,
+    "category": "business",
+    "title": "Accounts Department Zone Vastu",
+    "used": false
+  },
+  {
+    "id": 31,
+    "category": "wisdom",
+    "title": "Yantra Placement Home Guide",
+    "used": false
+  },
+  {
+    "id": 32,
+    "category": "vastu",
+    "title": "Staircase Direction Vastu Guide",
+    "used": false
+  },
+  {
+    "id": 33,
+    "category": "jyotish",
+    "title": "Venus Dasha Love and Money Effect",
+    "used": false
+  },
+  {
+    "id": 34,
+    "category": "numerology",
+    "title": "Number 3 Jupiter Creative Power",
+    "used": false
+  },
+  {
+    "id": 35,
+    "category": "samkhya",
+    "title": "Five Mahabhutas in Daily Life",
+    "used": false
+  },
+  {
+    "id": 36,
+    "category": "branding",
+    "title": "Office Interior Colour Branding",
+    "used": false
+  },
+  {
+    "id": 37,
+    "category": "prakriti",
+    "title": "Vata Anxiety Natural Solutions",
+    "used": false
+  },
+  {
+    "id": 38,
+    "category": "business",
+    "title": "Warehouse Layout Vastu Principles",
+    "used": false
+  },
+  {
+    "id": 39,
+    "category": "wisdom",
+    "title": "Brahma Muhurta Wake Up Benefits",
+    "used": false
+  },
+  {
+    "id": 40,
+    "category": "vastu",
+    "title": "Mirror Placement Complete Vastu",
+    "used": false
+  },
+  {
+    "id": 41,
+    "category": "jyotish",
+    "title": "Mars in 10th House Career Impact",
+    "used": false
+  },
+  {
+    "id": 42,
+    "category": "numerology",
+    "title": "Number 5 Mercury Business Power",
+    "used": false
+  },
+  {
+    "id": 43,
+    "category": "samkhya",
+    "title": "Prakriti Three Modes of Living",
+    "used": false
+  },
+  {
+    "id": 44,
+    "category": "branding",
+    "title": "Retail Store Name Energy Check",
+    "used": false
+  },
+  {
+    "id": 45,
+    "category": "prakriti",
+    "title": "Seasonal Routine Ritucharya Guide",
+    "used": false
+  },
+  {
+    "id": 46,
+    "category": "business",
+    "title": "Manufacturing Unit Vastu Layout",
+    "used": false
+  },
+  {
+    "id": 47,
+    "category": "wisdom",
+    "title": "Rahu Kaal Practical Daily Guide",
+    "used": false
+  },
+  {
+    "id": 48,
+    "category": "vastu",
+    "title": "Pooja Room Best Zone Selection",
+    "used": false
+  },
+  {
+    "id": 49,
+    "category": "jyotish",
+    "title": "Manglik Dosha Truth Explained",
+    "used": false
+  },
+  {
+    "id": 50,
+    "category": "numerology",
+    "title": "Number 8 Saturn Discipline Energy",
+    "used": false
+  },
+  {
+    "id": 51,
+    "category": "samkhya",
+    "title": "Sattva Food and Lifestyle Guide",
+    "used": false
+  },
+  {
+    "id": 52,
+    "category": "branding",
+    "title": "IT Company Name Number Selection",
+    "used": false
+  },
+  {
+    "id": 53,
+    "category": "prakriti",
+    "title": "Prakriti Based Exercise Selection",
+    "used": false
+  },
+  {
+    "id": 54,
+    "category": "business",
+    "title": "Hospital Vastu Complete Guidelines",
+    "used": false
+  },
+  {
+    "id": 55,
+    "category": "wisdom",
+    "title": "Griha Pravesh Complete Muhurat",
+    "used": false
+  },
+  {
+    "id": 56,
+    "category": "vastu",
+    "title": "North Facing House Complete Guide",
+    "used": false
+  },
+  {
+    "id": 57,
+    "category": "jyotish",
+    "title": "Sade Sati Complete Survival Guide",
+    "used": false
+  },
+  {
+    "id": 58,
+    "category": "numerology",
+    "title": "Wedding Date Selection Numerology",
+    "used": false
+  },
+  {
+    "id": 59,
+    "category": "samkhya",
+    "title": "Guna Analysis for Relationships",
+    "used": false
+  },
+  {
+    "id": 60,
+    "category": "branding",
+    "title": "Food Brand Colour Energy Guide",
+    "used": false
+  },
+  {
+    "id": 61,
+    "category": "prakriti",
+    "title": "Sleep Time Guide by Dosha Type",
+    "used": false
+  },
+  {
+    "id": 62,
+    "category": "business",
+    "title": "School Building Vastu Planning",
+    "used": false
+  },
+  {
+    "id": 63,
+    "category": "wisdom",
+    "title": "Diwali Lakshmi Direction Guide",
+    "used": false
+  },
+  {
+    "id": 64,
+    "category": "vastu",
+    "title": "South Facing House Truth Guide",
+    "used": false
+  },
+  {
+    "id": 65,
+    "category": "jyotish",
+    "title": "Mahadasha Change Life Effects",
+    "used": false
+  },
+  {
+    "id": 66,
+    "category": "numerology",
+    "title": "House Number Lucky or Not Check",
+    "used": false
+  },
+  {
+    "id": 67,
+    "category": "samkhya",
+    "title": "Vedic Time Management Method",
+    "used": false
+  },
+  {
+    "id": 68,
+    "category": "branding",
+    "title": "YouTube Channel Name Number Tips",
+    "used": false
+  },
+  {
+    "id": 69,
+    "category": "prakriti",
+    "title": "Workplace Dosha Balance Guide",
+    "used": false
+  },
+  {
+    "id": 70,
+    "category": "business",
+    "title": "Showroom Display Direction Vastu",
+    "used": false
+  },
+  {
+    "id": 71,
+    "category": "wisdom",
+    "title": "Navratri Nine Zone Activation",
+    "used": false
+  },
+  {
+    "id": 72,
+    "category": "vastu",
+    "title": "Home Office Vastu Perfect Setup",
+    "used": false
+  },
+  {
+    "id": 73,
+    "category": "jyotish",
+    "title": "Prashna Kundali Method Explained",
+    "used": false
+  },
+  {
+    "id": 74,
+    "category": "numerology",
+    "title": "Phone Number Vibration Analysis",
+    "used": false
+  },
+  {
+    "id": 75,
+    "category": "samkhya",
+    "title": "Element Balancing Your Home",
+    "used": false
+  },
+  {
+    "id": 76,
+    "category": "branding",
+    "title": "Business Card Design Vastu Tips",
+    "used": false
+  },
+  {
+    "id": 77,
+    "category": "prakriti",
+    "title": "Dosha Imbalance Warning Signs",
+    "used": false
+  },
+  {
+    "id": 78,
+    "category": "business",
+    "title": "Jewellery Shop Zone Design Vastu",
+    "used": false
+  },
+  {
+    "id": 79,
+    "category": "wisdom",
+    "title": "Purnima Full Moon Energy Guide",
+    "used": false
+  },
+  {
+    "title": "What is Lama Fera Healing and How Can It Transform Your Life",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "5 Signs Your Body is Asking for Energy Healing",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "How Lama Fera Helps with Stress and Anxiety in Modern Life",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Lama Fera for Business — Clearing Blocks to Financial Growth",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Distance Healing — How Lama Fera Works Without Physical Presence",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Lama Fera and Vastu — Why Space Cleansing Matters for Your Home",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "How Energy Healing Helps Relationships and Family Harmony",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Understanding Chakra Imbalance — Where Lama Fera Steps In",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Why Ancient Tibetan Healing is Gaining Popularity in Modern India",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Lama Fera for Children — Gentle Healing for Young Minds",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Emotional Healing — How Lama Fera Releases Grief and Trauma",
+    "category": "lamafera",
+    "used": false
+  },
+  {
+    "title": "Lama Fera and Sleep — How Energy Healing Cures Insomnia Naturally",
+    "category": "lamafera",
+    "used": false
+  }
 ]
